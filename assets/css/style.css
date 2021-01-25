@@ -14,7 +14,7 @@
 .page__holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:  10vh repeat(8, 1fr);
+    grid-template-rows:  50px 80px repeat(7, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
@@ -24,7 +24,10 @@
         background-color:#be5f00;
         color: white;
      }
-    .div2 { grid-area: 2 / 1 / 3 / 2; }
+    .navbar__container { grid-area: 2 / 1 / 3 / 2;
+        color: white;
+        background-color:#2bac54 ;
+     }
     .div3 { grid-area: 3 / 1 / 4 / 2; }
     .div4 { grid-area: 4 / 1 / 5 / 2; }
     .div5 { grid-area: 5 / 1 / 6 / 2; }
@@ -41,7 +44,7 @@
     justify-content: center;
     align-items: center;
     height:100%;
-    padding:auto 25px;
+    margin:auto 25px;
     font-size: 1rem;
 }
 #language__filter{
@@ -54,11 +57,73 @@
 #o__styles{
    color:black; 
 }
+ /* navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+#logo{
+    width:70px;
+    margin-right:25px;
+}
+.mobile__toggle{
+    margin-left:25px;
+    cursor: pointer;
+}
+.navitem__container{
+   list-style-type: none;
+   position: absolute;
+   text-align: center;
+   width:100%;
+   margin:auto;
+   transition: all 350ms ease;
+   opacity: 0;
+   z-index: -1;
+   top:25%;
+   display: none;
+}
+.navitem__container li{
+   margin:50px auto;
+   width:100%;
+   height: 100%;
+   font-size: 1.5rem;
+}
+ .navitem__container.active{
+    position: absolute;
+    background-color:#2bac54 ;
+    transition: all 350ms ease;
+    z-index: 0;
+    opacity: 1;
+    display:block;
+}
+.bar {
+    width: 25px;
+    background-color: white;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 350ms ease;
+}
+.isactive .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.isactive .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.isactive .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
 /* s-phones styles */
 @media screen and (min-width:360px){
 }
 /* m-phones styles */
 @media screen and (min-width:375px){
+    
 }
 /* l-phones styles */
 @media screen and (min-width:414px){
@@ -75,19 +140,49 @@
 }
 /* Desktop styles */
 @media screen and (min-width:1024px){
-   /*container grid*/
-    .page__holder {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows:  8vh repeat(8, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        }
+    /*container grid*/
+.page__holder {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  40px 80px repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
      /* contactus styles */
     .contactus{
         font-size:1rem;
     }
     #language__filter{
         font-size: 1rem;
+    }
+    /*navbar*/
+    .mobile__toggle{
+        display:none;
+    }
+    .navitem__container {
+        list-style-type: none;
+        position: static;
+        text-align: center;
+        width:auto;
+        margin:0;
+        transition: all 350ms ease;
+        opacity: 1;
+        z-index: 1;
+        top: unset;
+        display: block;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-left:25px;
+    }
+    .navitem__container li {
+        font-size: 1.1rem;
+        width:auto;
+        height:100%;
+        margin-left:20px;
+        cursor: pointer;
+    }
+    li:nth-child(1){
+        margin:auto 20px;
     }
 }
