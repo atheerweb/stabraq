@@ -6,9 +6,64 @@
     direction: rtl;
     font-family: "cairo";
 }
+
+/*loading*/
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+.animation {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  top: 0;
+ z-index: 999999;
+ width: 100%;
+ height: 100%;
+}
+
+.bg {
+  background: rgba(0, 0, 0, 0.85)
+    no-repeat center center / cover;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  filter: blur(0px);
+}
+
+.loading-text {
+  font-size: 50px;
+  color:#2bac54;
+}
 @font-face{
     src: url(../fonts/Cairo-Regular.ttf);
     font-family:"cairo";
+}
+/* loading */
+.loading{
+    background-color: white;
+    width: 100%;
+    height:100%;
+    z-index:99999;
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+
 }
 /*container grid*/
 .page__holder {
