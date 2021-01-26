@@ -14,7 +14,7 @@
 .page__holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:  50px 90px repeat(7, 1fr);
+    grid-template-rows:  50px 90px  60vh repeat(6, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
@@ -28,7 +28,11 @@
         color: white;
         background-color:#2bac54 ;
      }
-    .div3 { grid-area: 3 / 1 / 4 / 2; }
+    .slider__container { 
+        grid-area: 3 / 1 / 4 / 2;
+        overflow: hidden;
+      
+     }
     .div4 { grid-area: 4 / 1 / 5 / 2; }
     .div5 { grid-area: 5 / 1 / 6 / 2; }
     .div6 { grid-area: 6 / 1 / 7 / 2; }
@@ -127,7 +131,35 @@
     z-index: 1;
     cursor:pointer;
 }
+/*slider*/
 
+.slider{
+    display: flex;
+    align-items: center;
+    justify-content:right;
+    height: 100%;
+    margin:0 25px;
+}
+#slider__img{
+    display:none;
+}
+.slider__text{
+    font-size: 1.1rem;
+}
+.slider__text h2{
+    font-weight:normal;
+   
+}
+.calltoaction{
+    background: none;
+    padding:10px 30px;
+    border-radius:30px;
+    border: none;
+    background-color:#2bac54;
+    color: white;
+    margin-top: 20px;
+    font-size: 1rem;
+}
 
 /* s-phones styles */
 @media screen and (min-width:360px){
@@ -161,6 +193,29 @@
      .shopping__cart{
         margin-right:490px;
     } 
+    /*slider*/
+    .slider__container{
+        background: url(../imgs/slider.jpg);
+        background-size: cover;
+    }
+    .slider{
+        margin:0 35px;
+        display: flex;
+        align-items:center;
+        justify-content:left;
+        height: 100%;
+        float: left;
+    }
+    .slider h1 {
+        margin-bottom: 45px;
+    }
+    .calltoaction{
+        margin: 0;
+        margin-bottom:30px;
+    }
+    .slider__text h2{
+        font-weight:normal;
+    }
  }
 /* Desktop styles */
 @media screen and (min-width:1024px){
@@ -168,7 +223,7 @@
 .page__holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:  45px 90px repeat(7, 1fr);
+    grid-template-rows:  45px 90px  700px repeat(6, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
@@ -219,4 +274,16 @@
         margin-right:0;
         margin-left:35px;
     } 
+}
+/* l-Desktop styles */
+@media screen and (min-width:1348px){
+    .slider h1 {
+        margin-bottom: 0px;
+    }
+    .calltoaction{
+        margin: 0;
+        margin-bottom:0px;
+        position: relative;
+        top:70px;
+    }
 }
