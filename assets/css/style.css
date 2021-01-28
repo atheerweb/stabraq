@@ -193,10 +193,10 @@
 }
 
 .navitem__container li {
-    margin: 50px auto;
     width: 100%;
     height: 100%;
     font-size: 1.3rem;
+    margin: 26px auto;
 }
 .navitem__container.active {
     position: absolute;
