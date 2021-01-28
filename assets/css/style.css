@@ -8,38 +8,50 @@
 }
 
 /*loading*/
-
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
-
-.animation {
-    font-family: "Ubuntu", sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin: 0;
+.animation{
     position: absolute;
-    top: 0;
-    z-index: 999999;
+    background-color: white;
+    top:0;
     width: 100%;
     height: 100%;
+    z-index: 99;
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
-
-.bg {
-    background: rgba(0, 0, 0, 0.85) no-repeat center center / cover;
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
     position: absolute;
-    top: -30px;
-    left: -30px;
-    width: calc(100vw + 60px);
-    height: calc(100vh + 60px);
-    z-index: -1;
-    filter: blur(0px);
-}
-
-.loading-text {
-    font-size: 50px;
-    color: #2bac54;
-}
+    border: 4px solid #2bac54;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  
 
 @font-face {
     src: url(../fonts/Cairo-Regular.ttf);
@@ -171,13 +183,12 @@
 .navitem__container {
     list-style-type: none;
     position: absolute;
-    text-align: center;
+    padding:0 25px;
     width: 100%;
     margin: auto;
     transition: all 350ms ease;
     opacity: 0;
     z-index: -1;
-    top: 21%;
     display: none;
 }
 
@@ -185,9 +196,8 @@
     margin: 50px auto;
     width: 100%;
     height: 100%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
-
 .navitem__container.active {
     position: absolute;
     background-color: #2bac54;
@@ -195,8 +205,31 @@
     z-index: 0;
     opacity: 1;
     display: block;
+    top:100%;
 }
-
+.pi{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.submenu{
+   
+    display: none;
+    list-style: none;
+    padding-right: 20px;
+}
+.activel{
+    display: block;
+}
+.item__toggle{
+    position:relative;
+}
+.item__toggle .bar:nth-child(1){
+    transform:rotate(90deg) ;
+}
+.item__toggle .bar:nth-child(2){
+    transform: translateY(-8px);
+}
 .bar {
     width: 25px;
     background-color: white;
@@ -373,7 +406,7 @@
         z-index: 1;
         top: unset;
         display: block;
-        display: flex;
+       display: flex;
         text-align: center;
         justify-content: center;
         margin-right: 150px;
@@ -394,6 +427,32 @@
     .shopping__cart {
         margin-right: 0;
         margin-left: 35px;
+    }
+    .submenu{
+        position: absolute;
+        background-color:#2bac54;
+        list-style: none;
+        padding: 0;
+        top:100%;
+        left:50%;
+        width: 170px;
+        text-align:right;
+        padding:10px;
+        border-top: white 6px solid;
+        transition: all 350ms ease;
+        pointer-events: none;
+        display:none;
+    }
+    #products:hover>.submenu{
+        transition: all 350ms ease;
+        display: block;
+    }
+    .submenu li{
+        height: auto;
+        margin:10px;
+    }
+    .item__toggle{
+        display: none;
     }
 }
 

@@ -1,8 +1,10 @@
 //selectors
 
 const navItemContainer = document.querySelector(".navitem__container");
-const mobileToggle = document.querySelector(".mobile__toggle");
+const mobileToggle     = document.querySelector(".mobile__toggle");
 let   loadingAnimation = document.querySelector(".animation")
+const   itemToggle = document.querySelector(".item__toggle")
+const subMenu    = document.querySelector('.submenu')
 
 
 //hambutger menu
@@ -13,17 +15,22 @@ let activeMenu = () => {
     return
 }
 
+//remove loading animation
+
 let removeAnimation = () => {
     loadingAnimation.style.display = "none" ;
 }
+// show products list 
+let showList = () => {
+  subMenu.classList.toggle('activel')
+}
+
+
 
 //event listener
 mobileToggle.addEventListener('click' , activeMenu)
 window.addEventListener('load' , removeAnimation)
-
-
-
-
+itemToggle.addEventListener('click' , showList)
 
 
 
