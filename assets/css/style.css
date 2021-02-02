@@ -85,7 +85,7 @@
 .page__holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 90px 60vh  600px repeat(5, 1fr);
+    grid-template-rows: 50px 90px 60vh  640px repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
@@ -295,7 +295,7 @@
     border: none;
     background-color: #2bac54;
     color: white;
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 1rem;
     animation: 1s ease-out 0s 1 slideInFromLeft;
 }
@@ -309,7 +309,7 @@
     height: 100%;
 }
 #cat__title{
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     margin-bottom:50px;
 }
 .cat__container{
@@ -329,6 +329,7 @@
     justify-content:center;
     align-items:flex-start;
     flex-direction: column;
+    font-size:1.1rem;
 }
 .cat__item h4{
     margin-right:20px;
@@ -402,10 +403,31 @@
 
 /* s-phones styles */
 @media screen and (min-width:360px) {
+    /*container grid*/
+.page__holder {
+    
+    grid-template-rows: 50px 90px 60vh  700px repeat(5, 1fr);
+  
+}
     .navitem__container {
         top: 19%;
     }
-
+    /*category section*/
+    #cat__title {
+        font-size: 1.9rem;
+    }
+    .cat__item
+    {
+        font-size: 1.2rem;
+    }
+    #cattwo span,
+    #catthree span{
+        font-size: 1.05rem;
+        margin-right: 40px;
+    }
+    #catthree span{
+        margin-right: 80px;
+    }
     .shopping__cart {
         margin-right: 90px;
     }
@@ -612,8 +634,8 @@
     }
     .cat__item{
         font-size: 1.3rem;
-        height: 200px;
-        padding-right:20px;
+        height: 190px;
+        padding-right:5px;
     }
     .cat__item span,
     #cattwo span,
@@ -661,5 +683,15 @@
         margin-bottom: 0px;
         position: relative;
         top: 70px;
+    }
+    .cat__item{
+        font-size: 1.45rem;
+        height: 250px;
+        padding-right:20px;
+    }
+    .cat__item span,
+    #cattwo span,
+    #catthree span{
+        font-size:1.3rem;
     }
 }
