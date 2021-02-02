@@ -7,9 +7,31 @@
     font-family: "cairo";
 }
 
-/*loading*/
+/* animations */
+ 
+@keyframes opacityAnimation {
+0%{
+    opacity: 1;
+}
+50%{
+    opacity: 0.5;
+}
+100%{
+    opacity:1;
+}
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} 
+
+/*loading animation styles*/
 .animation{
-    position: absolute;
+    position:fixed;
     background-color: white;
     top:0;
     width: 100%;
@@ -19,49 +41,10 @@
     justify-content:center;
     align-items: center;
 }
-.lds-ripple {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-  }
-  .lds-ripple div {
-    position: absolute;
-    border: 4px solid #2bac54;
-    opacity: 1;
-    border-radius: 50%;
-    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-  }
-  .lds-ripple div:nth-child(2) {
-    animation-delay: -0.5s;
-  }
-
-/* animations */
- 
-  @keyframes lds-ripple {
-    0% {
-      top: 36px;
-      left: 36px;
-      width: 0;
-      height: 0;
-      opacity: 1;
-    }
-    100% {
-      top: 0px;
-      left: 0px;
-      width: 72px;
-      height: 72px;
-      opacity: 0;
-    }
-  }
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  } 
+#animate__logo{
+    animation: opacityAnimation  1000ms ease infinite;
+    margin-left: 20px;
+}
 
 @font-face {
     src: url(../fonts/Cairo-Regular.ttf);
@@ -261,7 +244,17 @@
     z-index: 1;
     cursor: pointer;
 }
-
+.shopping__cart::after{
+    background-color:#be5f00;
+    width: 30px;
+    height: 30px;
+    content: "0";
+    position: absolute;;
+    border-radius: 60px;
+    text-align: center;
+    box-shadow: 1px 1px 5px rgba(10, 10, 10, 0.8);
+    top:15px;
+}    
 /*slider*/
 
 .slider {
@@ -280,11 +273,11 @@
     font-size: 1.1rem;
 }
 .slider__text h1{
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+    animation: 1000ms ease-out slideInFromLeft;
 }
 .slider__text h2 {
     font-weight: normal;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+    animation: 1000ms ease-out slideInFromLeft;
 
 }
 
@@ -297,7 +290,7 @@
     color: white;
     margin-top: 30px;
     font-size: 1rem;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+    animation: 1000ms ease-out slideInFromLeft;
 }
 /* catrgories section */
 .shop__by__gategory{
@@ -550,6 +543,11 @@
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
+    /*loading animation styles*/
+#animate__logo{
+    animation: opacityAnimation  1000ms ease infinite;
+    margin-left: 0px;
+}
 
     /* contactus styles */
     .contactus {
@@ -665,6 +663,7 @@
     #cat__title{
         margin-top:50px;
         margin-bottom:0;
+        font-size: 2rem;
     }
     #catthree span {
         margin-right: 89px;
@@ -697,5 +696,8 @@
     #cattwo span,
     #catthree span{
         font-size:1.3rem;
+    }
+   #cat__title {
+        margin-top: 35px;
     }
 }
