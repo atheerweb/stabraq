@@ -477,6 +477,10 @@
     color:red;
     margin-left: 15px;
 }
+.d-none{
+    display: none;
+    opacity: 0;
+}
 .new{
     background-color: red;
     padding:0px 15px;
@@ -484,6 +488,8 @@
     color: white;
     position: absolute;
     margin: 12px;
+   opacity: 1;
+   display: inline;
 }
 
 /* s-phones styles */
