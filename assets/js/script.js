@@ -33,11 +33,15 @@ let showList = () => {
 let exitFunction = () =>{
   popupSection.classList.add('none')
 }
+let addFunction = () =>{
+  popupSection.classList.remove('none')
+}
 
 
 //event listener
 mobileToggle.addEventListener('click' , activeMenu)
 window.addEventListener('load' , removeAnimation)
+window.addEventListener('load' , addFunction)
 itemToggle.addEventListener('click' , showList)
 exitButton.addEventListener('click' , exitFunction)
 
