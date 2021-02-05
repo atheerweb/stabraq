@@ -5,7 +5,8 @@ const mobileToggle     = document.querySelector(".mobile__toggle");
 let   loadingAnimation = document.querySelector(".animation")
 const   itemToggle = document.querySelector(".item__toggle")
 const subMenu    = document.querySelector('.submenu')
-
+const exitButton = document.querySelector('.exit__button')
+const popupSection = document.querySelector('.popup__section')
 
 //hambutger menu
 
@@ -20,17 +21,25 @@ let activeMenu = () => {
 let removeAnimation = () => {
     loadingAnimation.style.display = "none" ;
 }
+
 // show products list 
+
 let showList = () => {
   subMenu.classList.toggle('activel')
 }
 
+// popup exit button
+
+let exitFunction = () =>{
+  popupSection.classList.add('none')
+}
 
 
 //event listener
 mobileToggle.addEventListener('click' , activeMenu)
 window.addEventListener('load' , removeAnimation)
 itemToggle.addEventListener('click' , showList)
+exitButton.addEventListener('click' , exitFunction)
 
 
 
