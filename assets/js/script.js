@@ -1,5 +1,4 @@
 //selectors
-
 const navItemContainer = document.querySelector(".navitem__container");
 const mobileToggle     = document.querySelector(".mobile__toggle");
 let   loadingAnimation = document.querySelector(".animation")
@@ -8,6 +7,28 @@ const subMenu    = document.querySelector('.submenu')
 const exitButton = document.querySelector('.exit__button')
 const popupSection = document.querySelector('.popup__section')
 
+function lol (){
+  let scrollPosition = window.scrollY
+  console.log(scrollPosition)
+  let products = document.querySelectorAll(".product__item").forEach((product) => {
+     if ( window.innerWidth > 1023 && scrollPosition > 1016 ){
+      product.classList.add('effect')
+    }else if( window.innerWidth > 767 && scrollPosition >  1514.619873046875 ){
+      product.classList.add('effect')
+    }else if( window.innerWidth > 413 && scrollPosition >  863 ){
+      product.classList.add('effect')
+    }else if( window.innerWidth > 374 && scrollPosition >  910 ){
+      product.classList.add('effect')
+    }else if( window.innerWidth > 359 && scrollPosition >  910 ){
+      product.classList.add('effect')
+    }else if( window.innerWidth > 319 && scrollPosition >  845 ){
+      product.classList.add('effect')
+    }
+  })
+}
+
+
+window.addEventListener('scroll' , lol  )
 //hambutger menu
 
 let activeMenu = () => {
@@ -57,37 +78,3 @@ exitButton.addEventListener('click' , exitFunction)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Loading animation
-const loadText = document.querySelector(".loading-text");
-const bg = document.querySelector(".bg");
-
-let load = 0;
-
-const blurring = () => {
-  load++;
-  if (load > 99) clearInterval(int);
-  loadText.innerText = `${load}%`;
-  loadText.style.opacity = scale(load, 0, 100, 1, 0);
-  bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
-};
-
-// For reference: https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
-const scale = (num, in_min, in_max, out_min, out_max) => {
-  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
-};
-
-let int = setInterval(blurring, 30);

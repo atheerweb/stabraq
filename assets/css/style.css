@@ -436,6 +436,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 350ms ease;
+    opacity: 0;
+}
+.effect{
+    opacity: 1;
+    transition: all 350ms ease;
 }
 .ratings__container{
     display: flex;
@@ -729,6 +735,7 @@
     }
     .product__items{
         justify-content: space-evenly;
+       
     }
         /*popup section*/
 .popup__section{
