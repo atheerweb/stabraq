@@ -673,7 +673,9 @@
         height: 100%;
         float: left;
     }
-
+    .slider__text{
+        font-size: 1.15rem;
+    }
     .slider h1 {
         margin-bottom: 45px;
     }
@@ -920,6 +922,7 @@
     .item__toggle{
         display: none;
     }
+  
     /*category section*/
     .cat__container{
         flex-direction: row;
@@ -1066,6 +1069,10 @@
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
+      /*slider section*/
+      .slider__text{
+        font-size: 1.9rem;
+    }
     .slider h1 {
         margin-bottom: 0px;
     }
@@ -1074,7 +1081,10 @@
         margin: 0;
         margin-bottom: 0px;
         position: relative;
-        top: 70px;
+        top: 55px;
+        right: 15px;
+        font-size: 1.3rem;
+        padding: 10px 35px;
     }
     .cat__item{
         font-size: 1.45rem;
