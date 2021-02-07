@@ -11,6 +11,10 @@
     --secondary:#be5f00;
     --thirdly:#7d7d7d;
 }
+a{
+    text-decoration: none;
+    color:inherit;
+}
 /* animations */
  
 @keyframes opacityAnimation {
@@ -824,7 +828,7 @@
     .page__holder {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 45px 90px 700px  400px  1280px repeat(4, 1fr);
+        grid-template-rows: 45px 90px 700px  400px  1350px repeat(4, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
