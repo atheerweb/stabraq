@@ -7,6 +7,11 @@ const subMenu    = document.querySelector('.submenu')
 const exitButton = document.querySelector('.exit__button')
 const popupSection = document.querySelector('.popup__section')
 
+
+
+
+// product transition effect 
+
 function lol (){
   let scrollPosition = window.scrollY
   console.log(scrollPosition)
@@ -28,7 +33,7 @@ function lol (){
 }
 
 
-window.addEventListener('scroll' , lol  )
+
 //hambutger menu
 
 let activeMenu = () => {
@@ -59,13 +64,14 @@ let addFunction = () =>{
 }
 
 
-//event listener
+//event listeners
+
 mobileToggle.addEventListener('click' , activeMenu)
 window.addEventListener('load' , removeAnimation)
 window.addEventListener('load' , addFunction)
 itemToggle.addEventListener('click' , showList)
 exitButton.addEventListener('click' , exitFunction)
-
+window.addEventListener('scroll' , lol  )
 
 
 

@@ -443,7 +443,7 @@
     opacity: 1;
     transition: all 350ms ease;
 }
-.ratings__container{
+.colors__container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -456,25 +456,11 @@
     align-items: center;
     flex-direction: row-reverse;
 }
-.fa-star{
-    margin: 0 3px;
-    color:var(--thirdly);
-    font-size:0.95rem;
-}
 .p_text{
     margin-bottom: 10px;
 }
 .price{
     margin-bottom: 60px;
-}
-.fa-star:nth-child(1){
-    color: #2bac54;
-}
-.fa-star:nth-child(2){
-    color: #2bac54;
-}
-.fa-star:nth-child(3){
-    color: #2bac54;
 }
 .shuffle__container{
     color:var(--thirdly);
@@ -482,6 +468,15 @@
 }
  .shuffle__item{
     cursor: pointer;
+}
+.colors{
+    background-size: cover;
+    width:35px;
+    height:35px;
+    margin-left:10px;
+    border-radius: 20px;
+    border: 1px solid white;
+    box-shadow: 1px 1px 5px black;
 }
 .offer{
     text-decoration: line-through;
