@@ -473,7 +473,7 @@ a {
   cursor: pointer;
   color: var(--thirdly);
 }
-.shuffle__item:nth-child(1){
+.lactive{
   color:var(--primary);
 }
 .colors {

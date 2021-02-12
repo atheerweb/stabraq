@@ -6,30 +6,50 @@ const itemToggle = document.querySelector(".item__toggle");
 const subMenu = document.querySelector(".submenu");
 const exitButton = document.querySelector(".exit__button");
 const popupSection = document.querySelector(".popup__section");
-const filters = document.querySelectorAll(".shuffle__item");
-const products = document.querySelectorAll(".product__item");
+const alll = document.querySelector(".all");
+const newO = document.querySelector(".new");
+const offers = document.querySelector(".offers");
 
 
 
 
-for( const filter of filters ){
-  filter.addEventListener('click',(e) => {
-    e.preventDefault()
-    const filterName = e.target.dataset.filter
-    //console.log(filterName)
-    products.forEach((product) => {
-      if (filterName == "all"){
-        product.style.display = "flex"
-      } else if (product.classList.contains(filterName)){
-        product.style.display = 'flex'
-        filter.style.color ="var(--primary)"
-        
-      } else{
-        product.style.display = "none"
+let sortBtns = document.querySelectorAll('.shuffle__item');
+let sortItems = document.querySelectorAll('.product__item');
+
+
+
+
+sortBtns.forEach( btn => {
+  btn.addEventListener('click', (e) =>{
+    for(const btnl of sortBtns ){
+      btnl.classList.remove('lactive')
+    }
+    btn.classList.add('lactive')
+    e.preventDefault
+    const filter = e.target.dataset.filter
+    //console.log(filter)
+    sortItems.forEach((item)=>{
+      if(filter == "all"){
+        item.style.display = "flex"
+      }else if (item.classList.contains(filter)){
+        item.style.display = "flex"
+      }else{
+        item.style.display = "none"
       }
     })
   })
-}
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
 
