@@ -76,7 +76,7 @@ a {
 .page__holder {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50px 90px 60vh 640px 3500px repeat(4, 1fr);
+  grid-template-rows: 50px 90px 60vh 640px 4700px repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -448,6 +448,10 @@ a {
   justify-content: center;
   align-items: center;
   margin: 40px 0 10px 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width:inherit;
+  width:276px;
 }
 .price {
   list-style: none;
@@ -469,6 +473,9 @@ a {
   cursor: pointer;
   color: var(--thirdly);
 }
+.shuffle__item:nth-child(1){
+  color:var(--primary);
+}
 .colors {
   background-size: cover;
   width: 35px;
@@ -477,6 +484,7 @@ a {
   border-radius: 20px;
   border: 1px solid white;
   box-shadow: 1px 1px 5px black;
+
 }
 .offer {
   text-decoration: line-through;
@@ -487,8 +495,18 @@ a {
   display: none;
   opacity: 0;
 }
-.new {
+.red {
   background-color: red;
+  padding: 0px 15px;
+  border-radius: 10px;
+  color: white;
+  position: absolute;
+  margin: 12px;
+  opacity: 1;
+  display: inline;
+}
+.green {
+  background-color: var(--primary);
   padding: 0px 15px;
   border-radius: 10px;
   color: white;
@@ -585,12 +603,11 @@ a {
 .subscribe {
   margin-top: 30px;
 }
-
 /* s-phones styles */
 @media screen and (min-width: 360px) {
   /*container grid*/
   .page__holder {
-    grid-template-rows: 50px 90px 60vh 700px 3500px repeat(4, 1fr);
+    grid-template-rows: 50px 90px 60vh 700px 4700px  repeat(4, 1fr);
   }
   .navitem__container {
     top: 19%;
@@ -637,7 +654,7 @@ a {
   .page__holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 90px 60vh 700px 3450px repeat(4, 1fr);
+    grid-template-rows: 50px 90px 60vh 700px 4700px repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
@@ -648,7 +665,7 @@ a {
   .page__holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 90px 60vh 1240px 1850px repeat(4, 1fr);
+    grid-template-rows: 50px 90px 60vh 1240px 2500px repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
@@ -822,7 +839,7 @@ a {
   .page__holder {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 45px 90px 700px 400px 1350px repeat(4, 1fr);
+    grid-template-rows: 45px 90px 700px 400px 1950px repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
@@ -1098,3 +1115,4 @@ a {
     margin-top: 35px;
   }
 }
+ 

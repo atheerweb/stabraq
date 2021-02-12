@@ -6,14 +6,45 @@ const itemToggle = document.querySelector(".item__toggle");
 const subMenu = document.querySelector(".submenu");
 const exitButton = document.querySelector(".exit__button");
 const popupSection = document.querySelector(".popup__section");
-const shuffle = document.querySelector(".shuffle__container");
-const shuffleItem = document.querySelector(".shuffle__item");
+const filters = document.querySelectorAll(".shuffle__item");
+const products = document.querySelectorAll(".product__item");
+
+
+
+
+for( const filter of filters ){
+  filter.addEventListener('click',(e) => {
+    e.preventDefault()
+    const filterName = e.target.dataset.filter
+    //console.log(filterName)
+    products.forEach((product) => {
+      if (filterName == "all"){
+        product.style.display = "flex"
+      } else if (product.classList.contains(filterName)){
+        product.style.display = 'flex'
+        filter.style.color ="var(--primary)"
+        
+      } else{
+        product.style.display = "none"
+      }
+    })
+  })
+}
+
+
+
+
+
+
+
+
+
+
 
 // product transition effect
 
 function lol() {
   let scrollPosition = window.scrollY;
-  console.log(scrollPosition);
   let products = document
     .querySelectorAll(".product__item")
     .forEach((product) => {
@@ -75,4 +106,3 @@ window.addEventListener("load", addFunction);
 itemToggle.addEventListener("click", showList);
 exitButton.addEventListener("click", exitFunction);
 window.addEventListener("scroll", lol);
-shuffleItem.addEventListener("click", active);
